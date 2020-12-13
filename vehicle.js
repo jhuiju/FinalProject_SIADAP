@@ -1,6 +1,6 @@
 function Vehicle(x,y) {
-  this.pos = CreateVector();
-  this.vel = createVector();
+  this.pos = CreateVector(x, y);
+  this.vel = createVector(x, y);
   this.acc = createVector();
 }
 
