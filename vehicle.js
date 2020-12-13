@@ -2,6 +2,9 @@ function Vehicle(x,y) {
   this.pos = CreateVector(x, y);
   this.vel = createVector(x, y);
   this.acc = createVector();
+  this.maxspeed = 30;
+  this.maxforce = 20;
+  this.r = 10;
 }
 
 Vehicle.prototype.update = function() {
