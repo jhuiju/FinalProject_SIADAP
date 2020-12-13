@@ -11,15 +11,15 @@ Vehicle.prototype.behaviors = function() {
 
 }
 
+Vehicle.prototype.flee = function() { //흩어져!
 
+}
 
 Vehicle.prototype.arrive = function() { //돌아와!
 
 }
 
-Vehicle.prototype.flee = function() { //흩어져!
 
-}
 
 Vehicle.prototype.update = function() {
 
