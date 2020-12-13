@@ -1,7 +1,17 @@
+var tree;
+
+function preload() {
+  tree = loadImage("tree.jpg");
+}
+
+
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(960, 960);
+  background(0);
+
+
 }
 
 function draw() {
-  background(220);
+  background(0);
 }
