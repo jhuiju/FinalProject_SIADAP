@@ -9,7 +9,7 @@ function setup() {
   createCanvas(960, 960);
   background(0);
 
-
+  tree.loadPixels();
 }
 
 function draw() {
