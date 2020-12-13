@@ -15,13 +15,15 @@ function setup() {
     for (var y = 0; y < tree.height; y +=5) {
       var index = x + y * tree.width;
       var c = tree.pixels[index * 4];
-          }
+      var b = brightness([c]);
+      if (b > 1) {
+        points.push(createVector(x,y));
+      }
     }
   }
 
   for (var i = 0; i < points.length; i++) {
     var pt = points[i];
-
   }
 }
 
