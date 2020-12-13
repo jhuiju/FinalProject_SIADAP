@@ -10,6 +10,11 @@ function setup() {
   background(0);
 
   tree.loadPixels();
+  for (var x = 0; x < tree.width; x +=5) {
+    for (var y = 0; y < tree.height; y +=5) {
+      var index = x + y * tree.width;
+    }
+  }
 }
 
 function draw() {
