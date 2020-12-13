@@ -1,4 +1,5 @@
 var tree;
+var points = [];
 
 function preload() {
   tree = loadImage("tree.jpg");
@@ -15,6 +16,8 @@ function setup() {
       var index = x + y * tree.width;
     }
   }
+
+  for (var i = 0; i < )
 }
 
 function draw() {
