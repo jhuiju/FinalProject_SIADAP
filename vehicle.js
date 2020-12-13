@@ -7,18 +7,24 @@ function Vehicle(x,y) {
   this.r = 10;
 }
 
-Vehicle.prototype.update = function() {
+Vehicle.prototype.behaviors = function() {
 
 }
 
-Vehicle.prototype.show = function() {
 
-}
 
 Vehicle.prototype.arrive = function() { //돌아와!
 
 }
 
-Vehicle.prototype.flee = function() { //도망가!
+Vehicle.prototype.flee = function() { //흩어져!
+
+}
+
+Vehicle.prototype.update = function() {
+
+}
+
+Vehicle.prototype.show = function() {
 
 }
