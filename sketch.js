@@ -1,5 +1,6 @@
 var tree;
 var points = [];
+var vehicle = [];
 
 function preload() {
   tree = loadImage("tree.jpg");
@@ -24,9 +25,17 @@ function setup() {
 
   for (var i = 0; i < points.length; i++) {
     var pt = points[i];
+    var vehicle = new Vehicle(pt.x, pt.y);
+    vehicles.push(vehicle);
   }
 }
 
 function draw() {
   background(0);
+  for (var i = 0; i < vehicles.length; i++) {
+    var v = vehicle[i];
+    v.behaviors();
+    v.update();
+    v.show();
+  }
 }
