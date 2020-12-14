@@ -19,7 +19,17 @@ Vehicle.prototype.behaviors = function() {
 }
 
 Vehicle.prototype.flee = function() { //흩어져!
-
+  var desired = p5.Vector.sub(target, this.pos);
+  var d = desired.mag();
+  if (d < 50) {
+    desired.setMag(this.maxspeed);
+    desired.mult(-1);
+    var steer = p5.Vector.sub(desired, this.vel);
+    steer.limit(this.maxforce);
+    return steer;
+  } else {
+    return createVector(0, 0);
+  }
 }
 
 Vehicle.prototype.arrive = function() { //돌아와!
