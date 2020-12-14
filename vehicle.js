@@ -45,7 +45,9 @@ Vehicle.prototype.arrive = function() { //돌아와!
   return steer;
 }
 
-
+Vehicle.prototype.applyForce = function(f) {
+  this.acc.add(f);
+}
 
 Vehicle.prototype.update = function() {
 
