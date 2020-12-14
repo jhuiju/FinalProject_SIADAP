@@ -50,9 +50,13 @@ Vehicle.prototype.applyForce = function(f) {
 }
 
 Vehicle.prototype.update = function() {
-
+  this.pos.add(this.vel);
+  this.vel.add(this.acc);
+  this.acc.mult(0);
 }
 
 Vehicle.prototype.show = function() {
-
+  ellipse(this.pos.x, this.pos.y, 10, 10);
+  fill(255);
+  noStroke();
 }
