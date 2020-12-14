@@ -33,7 +33,16 @@ Vehicle.prototype.flee = function() { //흩어져!
 }
 
 Vehicle.prototype.arrive = function() { //돌아와!
-
+  var desired = p5.Vector.sub(target, this.pos);
+  var d = desired.mag();
+  var speed = this.maxspeed;
+  if (d < 100) {
+    speed = map(d, 0, 100, 0, this.maxspeed);
+  }
+  desired.setMag(spped);
+  var steer = p5.Vector.sub(desired, this.vel);
+  steer.limit(this.maxforce);
+  return steer;
 }
 
 
