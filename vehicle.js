@@ -18,7 +18,7 @@ Vehicle.prototype.behaviors = function() {
   this.applyForce(flee);
 }
 
-Vehicle.prototype.flee = function() { //흩어져!
+Vehicle.prototype.flee = function(target) { //흩어져!
   var desired = p5.Vector.sub(target, this.pos);
   var d = desired.mag();
   if (d < 50) {
@@ -32,14 +32,14 @@ Vehicle.prototype.flee = function() { //흩어져!
   }
 }
 
-Vehicle.prototype.arrive = function() { //돌아와!
+Vehicle.prototype.arrive = function(target) { //돌아와!
   var desired = p5.Vector.sub(target, this.pos);
   var d = desired.mag();
   var speed = this.maxspeed;
   if (d < 100) {
     speed = map(d, 0, 100, 0, this.maxspeed);
   }
-  desired.setMag(spped);
+  desired.setMag(speed);
   var steer = p5.Vector.sub(desired, this.vel);
   steer.limit(this.maxforce);
   return steer;
