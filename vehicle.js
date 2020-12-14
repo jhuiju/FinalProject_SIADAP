@@ -1,6 +1,6 @@
 function Vehicle(x,y) {
   this.pos = CreateVector(random(width), random(height));
-  this.vel = createVector(x, y);
+  this.vel = p5.Vector.random2D();
   this.acc = createVector();
   this.target = createVector(x, y);
   this.maxspeed = 30;
