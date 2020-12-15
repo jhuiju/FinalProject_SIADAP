@@ -1,4 +1,4 @@
-//testing for speed2
+//testing for speed3
 var tree;
 var points = [];
 var vehicles = [];
@@ -48,7 +48,7 @@ function Vehicle(x,y) {
   this.acc = createVector();
   this.target = createVector(x, y);
   this.maxspeed = 4;
-  this.maxforce = 30;
+  this.maxforce = 35;
   this.r = 10;
 }
 
@@ -69,7 +69,7 @@ Vehicle.prototype.applyForce = function(f) {
 Vehicle.prototype.flee = function(target) { //흩어져!
   var desired = p5.Vector.sub(target, this.pos);
   var d = desired.mag();
-  if (d < 50) {
+  if (d < 60) {
     desired.setMag(this.maxspeed);
     desired.mult(-1);
     var steer = p5.Vector.sub(desired, this.vel);
