@@ -1,7 +1,7 @@
 //testing20201215
 var tree;
 var points = [];
-var vehicle = [];
+var vehicles = [];
 
 function preload() {
   tree = loadImage("tree.jpg");
