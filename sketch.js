@@ -40,6 +40,8 @@ function draw() {
   }
 }
 
+//Vehicle sketch
+
 function Vehicle(x,y) {
   this.pos = createVector(random(width), random(height));
   this.vel = p5.Vector.random2D();
@@ -86,6 +88,7 @@ Vehicle.prototype.arrive = function(target) { //돌아와!
   if (d < 100) {
     speed = map(d, 0, 100, 0, this.maxspeed);
   }
+
   desired.setMag(speed);
   var steer = p5.Vector.sub(desired, this.vel);
   steer.limit(this.maxforce);
