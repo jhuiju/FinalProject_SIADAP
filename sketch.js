@@ -2,12 +2,13 @@
 //testing310pm
 //testing331pm
 //testing359pm
+//testong426pm
 var tree;
 var points = [];
 var vehicles = [];
 
 function preload() {
-  tree = loadImage("tree.jpg");
+  tree = loadImage("tree2.jpg");
 }
 
 
