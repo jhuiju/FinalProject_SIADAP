@@ -7,7 +7,6 @@ function preload() {
   tree = loadImage("tree2.jpg");
 }
 
-
 function setup() {
   createCanvas(960, 960);
   background(0);
@@ -46,8 +45,8 @@ function Vehicle(x,y) {
   this.vel = p5.Vector.random2D();
   this.acc = createVector();
   this.target = createVector(x, y);
-  this.maxspeed = 20;
-  this.maxforce = 10;
+  this.maxspeed = 5;
+  this.maxforce = 30;
   this.r = 10;
 }
 
