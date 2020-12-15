@@ -15,8 +15,8 @@ function setup() {
   background(0);
 
   tree.loadPixels();
-  for (var x = 0; x < tree.width; x +=5) {
-    for (var y = 0; y < tree.height; y +=5) {
+  for (var x = 0; x < tree.width; x +=10) {
+    for (var y = 0; y < tree.height; y +=10) {
       var index = x + y * tree.width;
       var c = tree.pixels[index * 4];
       var b = brightness([c]);
@@ -42,24 +42,29 @@ function draw() {
     v.show();
   }
 }
+
 function Vehicle(x,y) {
   this.pos = createVector(random(width), random(height));
   this.vel = p5.Vector.random2D();
   this.acc = createVector();
   this.target = createVector(x, y);
-  this.maxspeed = 30;
-  this.maxforce = 20;
+  this.maxspeed = 20;
+  this.maxforce = 10;
   this.r = 10;
 }
 
 Vehicle.prototype.behaviors = function() {
   var arrive = this.arrive(this.target);
-  var flee = this.flee(hand);
   var hand = createVector(mouseX, mouseY);
+  var flee = this.flee(hand);
   arrive.mult(1);
   flee.mult(5);
   this.applyForce(arrive);
   this.applyForce(flee);
+}
+
+Vehicle.prototype.applyForce = function(f) {
+  this.acc.add(f);
 }
 
 Vehicle.prototype.flee = function(target) { //흩어져!
@@ -76,6 +81,7 @@ Vehicle.prototype.flee = function(target) { //흩어져!
   }
 }
 
+
 Vehicle.prototype.arrive = function(target) { //돌아와!
   var desired = p5.Vector.sub(target, this.pos);
   var d = desired.mag();
@@ -89,9 +95,7 @@ Vehicle.prototype.arrive = function(target) { //돌아와!
   return steer;
 }
 
-Vehicle.prototype.applyForce = function(f) {
-  this.acc.add(f);
-}
+
 
 Vehicle.prototype.update = function() {
   this.pos.add(this.vel);
