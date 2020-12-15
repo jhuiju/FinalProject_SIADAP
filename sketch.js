@@ -1,4 +1,4 @@
-//testing for speed
+//testing for speed2
 var tree;
 var points = [];
 var vehicles = [];
@@ -47,7 +47,7 @@ function Vehicle(x,y) {
   this.vel = p5.Vector.random2D();
   this.acc = createVector();
   this.target = createVector(x, y);
-  this.maxspeed = 5;
+  this.maxspeed = 4;
   this.maxforce = 30;
   this.r = 10;
 }
