@@ -1,8 +1,4 @@
-//testing20201215
-//testing310pm
-//testing331pm
-//testing359pm
-//testong426pm
+//testingsuccess
 var tree;
 var points = [];
 var vehicles = [];
