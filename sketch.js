@@ -1,7 +1,9 @@
-//testing for ellipse
+//testing for snowing
 var tree;
 var points = [];
 var vehicles = [];
+var mic;
+var snow = [];
 
 function preload() {
   tree = loadImage("tree2.jpg");
@@ -9,7 +11,8 @@ function preload() {
 
 function setup() {
   createCanvas(960, 960);
-  background(0);
+  mic = new p5.AudioIn();
+  mic.start();
 
   tree.loadPixels();
   for (var x = 0; x < tree.width; x +=10) {
@@ -32,12 +35,29 @@ function setup() {
 
 function draw() {
   background(0);
+  vol = mic.getLevel()*100;
+  print(vol);
+
+  if(vol>2) {
+    var newSnowing = {
+
+    }
+  }
+
   for (var i = 0; i < vehicles.length; i++) {
     var v = vehicles[i];
     v.behaviors();
     v.update();
     v.show();
   }
+}
+
+//snowing
+
+function snowing(xpos, ypos, size, blur) {
+  ellipse(xpos, ypos, size, size);
+  fill(255, 255, 255, blur);
+  noStroke()
 }
 
 //Vehicle sketch
