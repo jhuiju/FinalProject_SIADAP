@@ -47,6 +47,17 @@ function draw() {
     }
     snow.push(newSnowing);
   }
+  for (i=0; i<snow.length; i++) {
+    var object = snow[i];
+    snowing(object.xpos, object.ypos, object.size, object.blur);
+    object.ypos +=vol*10 + random(1, 10);
+    if (snow[i].ypos > height + 30) {
+      snow.splice(1, i);
+    }
+    }
+  }
+
+
 
   for (var i = 0; i < vehicles.length; i++) {
     var v = vehicles[i];
