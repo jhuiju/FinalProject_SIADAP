@@ -1,4 +1,4 @@
-//testing for snowing1
+//snowingtest please work!
 var tree;
 var points = [];
 var vehicles = [];
@@ -35,29 +35,28 @@ function setup() {
 
 function draw() {
   background(0);
-  vol = mic.getLevel();
+  vol = mic.getLevel()*100;
   print(vol);
 
   if(vol>2) {
     var newSnowing = {
       xpos:random(width),
       ypos:0,
-      size:vol*10,
+      size:vol,
       blur:random(150, 255)
-    }
+    };
     snow.push(newSnowing);
   }
-  for (i=0; i<snow.length; i++) {
-    var object = snow[i];
+
+  for (k=0; k < snow.length; k++) {
+    var object = snow[k];
     snowing(object.xpos, object.ypos, object.size, object.blur);
-    object.ypos +=vol*10 + random(1, 10);
-    if (snow[i].ypos > height + 30) {
-      snow.splice(1, i);
+    object.ypos +=vol + random(1, 10);
+    if (snow[k].ypos > height + 30) {
+      snow.splice(1, k);
     }
     }
   }
-
-
 
   for (var i = 0; i < vehicles.length; i++) {
     var v = vehicles[i];
@@ -71,7 +70,7 @@ function draw() {
 function snowing(xpos, ypos, size, blur) {
   ellipse(xpos, ypos, size, size);
   fill(255, 255, 255, blur);
-  noStroke()
+  noStroke();
 }
 
 
