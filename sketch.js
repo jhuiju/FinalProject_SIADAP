@@ -35,13 +35,17 @@ function setup() {
 
 function draw() {
   background(0);
-  vol = mic.getLevel()*100;
+  vol = mic.getLevel();
   print(vol);
 
   if(vol>2) {
     var newSnowing = {
-
+      xpos:random(width),
+      ypos:0,
+      size:vol*10,
+      blur:random(150, 255)
     }
+    snow.push(newSnowing);
   }
 
   for (var i = 0; i < vehicles.length; i++) {
@@ -53,15 +57,14 @@ function draw() {
 }
 
 //snowing
-
 function snowing(xpos, ypos, size, blur) {
   ellipse(xpos, ypos, size, size);
   fill(255, 255, 255, blur);
   noStroke()
 }
 
-//Vehicle sketch
 
+//Vehicle sketch
 function Vehicle(x,y) {
   this.pos = createVector(random(width), random(height));
   this.vel = p5.Vector.random2D();
