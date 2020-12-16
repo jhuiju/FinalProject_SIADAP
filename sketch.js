@@ -1,4 +1,4 @@
-//testing for speed4
+//testing for ellipse
 var tree;
 var points = [];
 var vehicles = [];
@@ -104,7 +104,7 @@ Vehicle.prototype.update = function() {
 }
 
 Vehicle.prototype.show = function() {
-  ellipse(this.pos.x, this.pos.y, random(5, 20), random(5, 20));
+  ellipse(this.pos.x, this.pos.y, random(5, 10), random(5, 10));
   fill(255);
   noStroke();
 }
