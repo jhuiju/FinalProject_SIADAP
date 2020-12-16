@@ -36,14 +36,14 @@ function setup() {
 function draw() {
   background(0);
   vol = mic.getLevel()*100;
-  print(vol);
+//  print(vol);
 
   if(vol>2) {
     var newSnowing = {
-      xpos:random(width),
-      ypos:0,
-      size:vol,
-      blur:random(150, 255)
+      xpos: random(width),
+      ypos: 0,
+      size: vol,
+      blur: random(150, 255)
     };
     snow.push(newSnowing);
   }
@@ -51,7 +51,7 @@ function draw() {
   for (k=0; k < snow.length; k++) {
     var object = snow[k];
     snowing(object.xpos, object.ypos, object.size, object.blur);
-    object.ypos +=vol + random(1, 10);
+    object.ypos += vol + random(1, 10);
     if (snow[k].ypos > height + 30) {
       snow.splice(1, k);
     }
