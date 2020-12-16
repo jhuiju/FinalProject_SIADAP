@@ -1,4 +1,4 @@
-//testing for ellipse1
+//testing for ellipse
 var tree;
 var points = [];
 var vehicles = [];
@@ -47,9 +47,9 @@ function Vehicle(x,y) {
   this.vel = p5.Vector.random2D();
   this.acc = createVector();
   this.target = createVector(x, y);
-  this.maxspeed = 4;
-  this.maxforce = 25;
-  this.r = 10;
+  this.maxspeed = 3;
+  this.maxforce = 30;
+  this.r = 5;
 }
 
 Vehicle.prototype.behaviors = function() {
