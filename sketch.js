@@ -1,4 +1,4 @@
-//snowingtest please work please
+//please
 var tree;
 var points = [];
 var vehicles = [];
