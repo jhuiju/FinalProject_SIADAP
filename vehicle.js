@@ -57,7 +57,7 @@ Vehicle.prototype.update = function() {
 }
 
 Vehicle.prototype.show = function() {
-  ellipse(this.pos.x, this.pos.y, random(5, 10), random(5, 10));
+  ellipse(this.pos.x, this.pos.y, random(5, 15), random(5, 15));
   fill(255);
   noStroke();
 }
