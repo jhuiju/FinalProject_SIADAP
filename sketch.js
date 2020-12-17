@@ -1,4 +1,4 @@
-//tessting for slider
+//doesitwork
 var tree;
 var points = [];
 var vehicles = [];
