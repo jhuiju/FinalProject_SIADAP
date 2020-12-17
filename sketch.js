@@ -1,9 +1,8 @@
-//tree3;
+//tessting for slider
 var tree;
 var points = [];
 var vehicles = [];
-// var mic;
-// var snow = [];
+let slider;
 
 function preload() {
   tree = loadImage("tree3.jpg");
@@ -11,8 +10,9 @@ function preload() {
 
 function setup() {
   createCanvas(960, 960);
-  // mic = new p5.AudioIn();
-  // mic.start();
+  slider = createSlider(150, 255, 200, 1);
+  slider.position(0, 970);
+  slider.style('width', '180px');
 
   tree.loadPixels();
   for (var x = 0; x < tree.width; x +=10) {
@@ -35,27 +35,7 @@ function setup() {
 
 function draw() {
   background(0);
-  // vol = mic.getLevel()*100;
-//  print(vol);
-
-  // if(vol>2) {
-  //   var newSnowing = {
-  //     xpos: random(width),
-  //     ypos: 0,
-  //     size: vol,
-  //     blur: random(150, 255)
-  //   };
-  //   snow.push(newSnowing);
-  // }
-  //
-  // for (k=0; k < snow.length; k++) {
-  //   var object = snow[k];
-  //   snowing(object.xpos, object.ypos, object.size, object.blur);
-  //   object.ypos += vol + random(1, 10);
-  //   if (snow[k].ypos > height + 30) {
-  //     snow.splice(1, k);
-  //   }
-  //   }
+  let val = slider.value();
 
   for (var i = 0; i < vehicles.length; i++) {
     var v = vehicles[i];
@@ -64,13 +44,6 @@ function draw() {
     v.show();
   }
 }
-
-//snowing
-// function snowing(xpos, ypos, size, blur) {
-//   ellipse(xpos, ypos, size, size);
-//   fill(255, 255, 255, blur);
-//   noStroke();
-// }
 
 
 //Vehicle sketch
@@ -137,6 +110,6 @@ Vehicle.prototype.update = function() {
 
 Vehicle.prototype.show = function() {
   ellipse(this.pos.x, this.pos.y, random(5, 10), random(5, 10));
-  fill(255);
+  fill(255, 255, val);
   noStroke();
 }
