@@ -1,8 +1,7 @@
-//doesitwork
+//test_1217
 var tree;
 var points = [];
 var vehicles = [];
-let slider;
 
 function preload() {
   tree = loadImage("tree3.jpg");
@@ -10,9 +9,6 @@ function preload() {
 
 function setup() {
   createCanvas(960, 960);
-  slider = createSlider(150, 255, 200, 1);
-  slider.position(0, 970);
-  slider.style('width', '180px');
 
   tree.loadPixels();
   for (var x = 0; x < tree.width; x +=10) {
@@ -35,8 +31,6 @@ function setup() {
 
 function draw() {
   background(0);
-  let val = slider.value();
-
   for (var i = 0; i < vehicles.length; i++) {
     var v = vehicles[i];
     v.behaviors();
@@ -105,6 +99,6 @@ Vehicle.prototype.update = function() {
 
 Vehicle.prototype.show = function() {
   ellipse(this.pos.x, this.pos.y, random(5, 10), random(5, 10));
-  fill(255, 255, val);
+  fill(255);
   noStroke();
 }
