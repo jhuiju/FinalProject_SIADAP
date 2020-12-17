@@ -1,4 +1,4 @@
-//not working..im so sad:(
+//tree3;
 var tree;
 var points = [];
 var vehicles = [];
@@ -6,7 +6,7 @@ var vehicles = [];
 // var snow = [];
 
 function preload() {
-  tree = loadImage("tree2.jpg");
+  tree = loadImage("tree3.jpg");
 }
 
 function setup() {
