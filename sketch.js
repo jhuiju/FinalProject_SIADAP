@@ -45,8 +45,6 @@ function draw() {
   }
 }
 
-
-//Vehicle sketch
 function Vehicle(x,y) {
   this.pos = createVector(random(width), random(height));
   this.vel = p5.Vector.random2D();
@@ -85,7 +83,6 @@ Vehicle.prototype.flee = function(target) { //흩어져!
   }
 }
 
-
 Vehicle.prototype.arrive = function(target) { //돌아와!
   var desired = p5.Vector.sub(target, this.pos);
   var d = desired.mag();
@@ -99,8 +96,6 @@ Vehicle.prototype.arrive = function(target) { //돌아와!
   steer.limit(this.maxforce);
   return steer;
 }
-
-
 
 Vehicle.prototype.update = function() {
   this.pos.add(this.vel);
