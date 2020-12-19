@@ -1,10 +1,10 @@
-//testingforsize
+//tree4
 var tree;
 var points = [];
 var vehicles = [];
 
 function preload() {
-  tree = loadImage("tree3.jpg");
+  tree = loadImage("tree4.jpg");
 }
 
 function setup() {
